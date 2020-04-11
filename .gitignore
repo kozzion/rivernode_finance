@@ -1,0 +1,12 @@
+*.pyc
+script/list_result.csv
+script/list_result.json
+script/portfolio.csv
+script/renewables.xlsx
+script/response_option_chain.json
+script/list
+script/temp
+script/temp_count
+script/temp_list
+script/transactions.csv
+script/temp.json
