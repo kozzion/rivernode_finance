@@ -21,7 +21,7 @@ class ModelNonLinearRegression(object):
     def list_name_parameter(self):
         return ['error', 'cost'].extend(self.function.list_name_parameter())
     
-    def fit(self, option_chain):
+    def fit(self, list_sd):
         list_strike = option_chain['list_strike']
 
 

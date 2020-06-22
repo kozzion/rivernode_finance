@@ -6,6 +6,25 @@ class ToolsModel(object):
 
 
 
+    @staticmethod 
+    def compute_mu(array_domain, array_pdf):
+        return np.dot(array_domain, array_pdf)
+
+    @staticmethod 
+    def compute_sd(array_domain, array_pdf):
+        #TODO this is broken
+        mu = ToolsModel.compute_mu(array_domain, array_pdf)
+        #print( len(array_pdf + 1))
+        array_pdf = array_pdf / np.sum(array_pdf)
+        result = np.sqrt(np.dot(np.square(array_domain - mu), array_pdf))
+        return result
+
+    @staticmethod 
+    def function_value_put(array_domain):
+        array_price_put = np.zeros(array_domain.shape)
+        array_price_put[0 < array_domain] = array_domain[0 < array_domain]
+        return array_price_put
+
     @staticmethod
     def array_price_put_for_cdf(array_domain_cdf, array_value_cdf, array_strike):
         array_price_put = np.zeros(array_strike.shape)
